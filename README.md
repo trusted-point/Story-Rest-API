@@ -17,20 +17,20 @@ source venv/bin/activate
 ```bash
 pip3 install -r requirements.txt
 ```
-### 4. Edit `config.yaml` if needed
+### 5. Edit `config.yaml` if needed
 It's important to specify correct Story rpc url (e.g. http://127.0.0.1:29659).
 
 You can also customize logs settings, disable/enable swagger etc.
 ```bash
 nano config.yaml
 ```
-### 5. Start the app
+### 6. Start the app
 ```bash
 uvicorn main:app --host 0.0.0.0 --port 8085 --workers 1
 # Increasing the number of --workers allows the application to handle more concurrent requests
 ```
 
-### 6. Start the app in background (Optional)
+### 7. Start the app in the background (Optional)
 ```bash
 sudo tee /etc/systemd/system/story-rest-api.service > /dev/null <<EOF
 [Unit]
