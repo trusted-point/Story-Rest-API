@@ -1,3 +1,4 @@
+## You can access our public API here: https://api-story-testnet.trusted-point.com
 
 ### 1. Update and install required packages
 ```bash
