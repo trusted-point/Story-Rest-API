@@ -1,4 +1,5 @@
 import yaml
+import os
 from pydantic import BaseModel, HttpUrl, ValidationError, Field
 from typing_extensions import Annotated
 from typing import Literal
@@ -41,6 +42,6 @@ def load_config(file_path) -> Config:
         raise yaml.YAMLError(f"YAML parsing error: {e}")
     except Exception as e:
         raise Exception(f"An unexpected error occurred while loading the configuration: {e}")
-    
-config = load_config('config.yaml')
-print(config)
+
+config_path = os.getenv('CONFIG_PATH', 'config.yaml')
+config = load_config(config_path)
