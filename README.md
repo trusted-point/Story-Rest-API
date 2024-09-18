@@ -7,7 +7,7 @@ sudo apt update && sudo apt install python3 python3-venv git -y
 ```bash
 git clone https://github.com/trusted-point/Story-Rest-API.git
 ```
-### 3. Activate virtual enviarment (Optional)
+### 3. Activate virtual enviarment
 ```bash
 cd Story-Rest-API
 python3 -m venv venv
@@ -28,7 +28,7 @@ nano config.yaml
 uvicorn main:app --host 0.0.0.0 --port 8085 --workers 1
 # Increasing the number of --workers allows the application to handle more concurrent requests
 ```
-### 6. Optional. Start the app in background
+### 6. Start the app in background (Optional)
 ```bash
 sudo tee /etc/systemd/system/story-rest-api.service > /dev/null <<EOF
 [Unit]
@@ -40,6 +40,9 @@ WorkingDirectory=$HOME/Story-Rest-API
 User=$USER
 Type=simple
 ExecStart=$(which uvicorn) main:app --host 0.0.0.0 --port 8085 --workers 1
+Environment="CONFIG_PATH=$HOME/Story-Rest-API/config.yaml"
+Environment="LOGPATH=$HOME/Story-Rest-API/logs/logs.log"
+Environment="PYTHONPATH=$HOME/Story-Rest-API"
 Restart=on-failure
 
 [Install]
