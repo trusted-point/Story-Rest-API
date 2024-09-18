@@ -6,7 +6,7 @@ App:
   swagger_description: REST API for interacting with the Story [Cosmos SDK based network].
 
 Chain:
-  rpc: https://rpc-zetachain-testnet.trusted-point.com:443/
+  rpc: http://127.0.0.1:29659
 
 Logs:
   level: INFO
