@@ -1,0 +1,17 @@
+App:
+  version: v1.0.0-beta
+  swagger: true
+  swagger_path: "/"
+  swagger_title: Story Protocol REST API Docs
+  swagger_description: REST API for interacting with the Story [Cosmos SDK based network].
+
+Chain:
+  rpc: https://rpc-zetachain-testnet.trusted-point.com:443/
+
+Logs:
+  level: INFO
+  save: true
+  file_path: logs/logs.log
+  rotation: true
+  rotation_size: 10MB
+  backups_count: 3
