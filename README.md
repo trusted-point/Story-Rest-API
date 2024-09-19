@@ -14,7 +14,7 @@ cd Story-Rest-API
 python3 -m venv venv
 source venv/bin/activate
 ```
-#### 4. Install dependencies
+### 4. Install dependencies
 ```bash
 pip3 install -r requirements.txt
 ```
