@@ -6,8 +6,6 @@ from typing import Literal
 
 class App(BaseModel):
     version: str
-    # host: str
-    # port: Annotated[int, Field(ge=0, le=65535)]
     swagger: bool = True
     swagger_path: str
     swagger_title: str

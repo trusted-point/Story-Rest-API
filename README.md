@@ -8,7 +8,7 @@ sudo apt update && sudo apt install python3 python3-venv git -y
 ```bash
 git clone https://github.com/trusted-point/Story-Rest-API.git
 ```
-### 3. Activate virtual enviarment
+### 3. Activate virtual environment
 ```bash
 cd Story-Rest-API
 python3 -m venv venv
