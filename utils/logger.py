@@ -141,7 +141,7 @@ def set_up_logger(
 
 logger = set_up_logger(log_lvl=config.Logs.level,
                         log_save=config.Logs.save,
-                        log_path=os.getenv("CONFIG_PATH") or config.Logs.file_path,
+                        log_path=os.getenv("LOGPATH") or config.Logs.file_path,
                         log_rotation=config.Logs.rotation,
                         log_rotation_size=config.Logs.rotation_size,
                         log_backups_count=config.Logs.backups_count,
