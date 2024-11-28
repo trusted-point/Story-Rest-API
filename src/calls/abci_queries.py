@@ -139,11 +139,6 @@ class SyncHttpCalls:
             }
             headers = {"Content-Type": "application/json", "Accept": "application/json"}
             response = requests.get(self.rpc, timeout=self.timeout , headers=headers, data=json.dumps(payload))
-            print('-----')
-            print(response.status_code)
-            print(response.json())
-            print('-----')
-
 
             if response.status_code == 200:
                 response = response.json()
