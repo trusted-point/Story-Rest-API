@@ -110,14 +110,19 @@ from protobuf.src.cosmospy_protobuf.cosmos.distribution.v1beta1.query_pb2 import
     QueryValidatorSlashesResponse
 )
 
+# from protobuf.src.cosmospy_protobuf.cosmos.base.tendermint.v1beta1.query_pb2 import (
+#     GetNodeInfoRequest,
+#     GetNodeInfoResponse
+# )
+
 from google.protobuf.json_format import MessageToDict
 
 from protobuf.src.cosmospy_protobuf.cosmos.base.query.v1beta1.pagination_pb2 import PageRequest
 
 class SyncHttpCalls:
 
-    def __init__(self, timeout=10):
-        self.rpc = config.Chain.rpc
+    def __init__(self, timeout=10, rpc = config.Chain.rpc):
+        self.rpc = rpc
         self.timeout = timeout
     
     def handle_abci_request(self, callback, hex_data, path, prove=False) -> bytes:
@@ -134,6 +139,11 @@ class SyncHttpCalls:
             }
             headers = {"Content-Type": "application/json", "Accept": "application/json"}
             response = requests.get(self.rpc, timeout=self.timeout , headers=headers, data=json.dumps(payload))
+            print('-----')
+            print(response.status_code)
+            print(response.json())
+            print('-----')
+
 
             if response.status_code == 200:
                 response = response.json()

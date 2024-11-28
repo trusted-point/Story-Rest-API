@@ -163,7 +163,7 @@ def get_delegator_delegations(
     delegator_addr: str = Path(description="delegator_addr defines the delegator address to query for."),
     pagination: PageRequest = Depends(get_pagination_params)):
     
-    result = request.get_delegator_delegations(validator_addr=delegator_addr, pagination=pagination)
+    result = request.get_delegator_delegations(delegator_addr=delegator_addr, pagination=pagination)
     if result['code'] != 0:
         raise HTTPException(status_code=500, detail=result['message'])
     
